@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @font-face {
+            font-family: "Montserrat Alternate";
+            src: url('.Fonts/MontserratAlternates-Regular.woff2');
+        }
+
+        @font-face {
+            font-family: "Grechen Fuemen";
+            src: url('./Fonts/GrechenFuemen-Regular.woff2');
+        }
+
+        /* root Variable CSS */
+        :root {
+            --hue: 358;
+            --first-color: hsl(var(--hue), 80%, 49%);
+            --first-color-alt: hsl(var(--hue), 76%, 45%);
+            --white-color: hsl(0, 0%, 98%);
+            --black-color: hsl(0, 0%, 1%);
+            --text-color: hsl(var(--hue), 2%, 66%);
+            --body-color: hsl(var(--hue), 100%, 1%);
+            --container-color: hsl(var(--hue), 2%, 10%);
+            --conic-gradient: conic-gradient(from 150deg at 50% 45%,
+                    hsl(var(--hue), 80%, 20%) 0deg,
+                    hsl(var(--hue), 80%, 48%) 140deg,
+                    hsl(var(--hue), 80%, 20%) 360deg);
+
+            /* Font and Typography */
+            --body-font: "Montserrat Alternate", sans-serif;
+            --second-font: "Grechen Fuemen", cursive;
+            --biggest-font-size: 2.5rem;
+            --h1-font-size: 1.5rem;
+            --h2-font-size: 1.25rem;
+            --h3-font-size: 1rem;
+            --normal-font-size: .9rem;
+            --small-font-size: .8rem;
+            --smaller-font-size: .7rem;
+
+            /* Font Weight */
+            --font-regular: 400;
+            --font-medium: 500;
+            --font-semibold: 600;
+
+
+
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .glass {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(12px);
+
+        }
+
+        a {
+            text-decoration: none;
+
+
+        }
+
+        body {
+            background-image: url('./Images/bg1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            font-family: var(--body-font);
+        }
+
+        .thankyou-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(255, 255, 255, 0.062);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-radius: 18px;
+            box-shadow: 0 0 35px rgb(0, 0, 0);
+            border: 1px solid rgba(255, 255, 255, 0.345);
+            padding: 3.5rem 1.5rem;
+            max-width: 500px;
+            height: auto;
+            /* text-align: center; */
+            transition: all 0.5s ease;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .thankyou-container h1 {
+            position: relative;
+            color: transparent;
+            background-clip: text;
+            /* margin-bottom: 2.5rem; */
+            -webkit-background-clip: text;
+            -webkit-text-stroke: .1px crimson;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-weight: 800;
+            font-family: var(--second-font);
+            font-size: 5rem;
+            text-align: center;
+            transition: all 0.5s ease;
+            animation: textFadeIn 1.2s ease-in-out;
+        }
+
+        @keyframes textFadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-500%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .thankyou-container h1::before {
+            content: 'Thank You!';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: rgba(255, 255, 255, 0);
+            filter: blur(8px);
+            text-shadow: 0 0 8px crimson;
+            z-index: -1;
+        }
+
+
+        .thankyou-container p {
+            /* line-height: 18px; */
+            font-family: var(--body-font);
+            color: rgb(255, 255, 255);
+            /* font-weight: 100; */
+            margin: 2em 0;
+            text-align: center;
+            font-size: var(--small-font-size);
+        }
+
+        .thankyou-container .back-btn {
+            position: relative;
+            width: 100%;
+            background: transparent;
+            color: crimson;
+            border: 1px solid rgb(132, 13, 36);
+            border-radius: 8px;
+            padding: 13px 34px;
+            font-size: 1em;
+            cursor: pointer;
+            opacity: .5;
+            transition: all 0.4s;
+        }
+
+
+        .thankyou-container .back-btn:hover {
+            opacity: 1;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.311);
+            background-color: crimson;
+            color: white;
+        }
+
+
+
+        .thankyou-container .circle_container {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75px;
+            height: 75px;
+            background-color: crimson;
+            box-shadow: inset 0 0 10px;
+            border-radius: 100%;
+            padding: .5rem;
+            overflow: hidden;
+        }
+
+        .circle_container>.circle_icon {
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            box-shadow: 0 0 5px white;
+        }
+
+        .highlight {
+            color: white;
+            font-size: var(--font-regular);
+            font-weight: 800;
+            /* line-height: 50px; */
+        }
+
+        /* Media Query */
+        @media (max-width: 756px) {
+            .thankyou-container {
+                /* padding: 24px; */
+                width: 400px;
+            }
+
+            .thankyou-container h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (min-width: 320px) and (max-width: 400px) {
+            .thankyou-container {
+                /* padding: 2rem .5rem; */
+                width: 320px;
+            }
+
+            .thankyou-container h1 {
+                font-size: 3rem;
+                margin-top: 2rem;
+            }
+
+            .thankyou-container p {
+                line-height: 30px;
+                font-family: var(--body-font);
+                color: var(--white-color);
+                font-weight: 100;
+                /* margin-bottom: 1em; */
+                font-size: var(--font-medium);
+            }
+
+            .highlight {
+                font-weight: 800;
+                font-size: var(--small-font-size);
+                line-height: 50px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glass"></div>
+    <div class="thankyou-container">
+        <div class="circle_container">
+            <img src="./Images/sent.gif" alt="gif" class="circle_icon">
+        </div>
+        <h1>Thank You!</h1>
+        <span class="highlight">For reaching out!</span>
+        <p class="desc">
+            I appreciate your interest in my graphic design services and will reply soon with the next steps.
+        </p>
+
+            <button type="button" class="back-btn">Go Back
+                <i class="ri-arrow-left-line"></i>
+            </button>
+        
+    </div>
+
+    <script>
+        document.querySelector(".back-btn").addEventListener("click", function () {
+            window.location.href = "https://your-portfolio-url.com";
+        });
+
+    </script>
+</body>
+
+</html>
