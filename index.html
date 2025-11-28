@@ -166,37 +166,14 @@
 
 
         .thankyou-container p {
-            /* line-height: 18px; */
             font-family: var(--body-font);
             color: rgb(255, 255, 255);
-            /* font-weight: 100; */
-            margin: 2em 0;
+            margin: 1em 0;
             text-align: center;
             font-size: var(--small-font-size);
         }
 
-        .thankyou-container .back-btn {
-            position: relative;
-            width: 100%;
-            background: transparent;
-            color: crimson;
-            border: 1px solid rgb(132, 13, 36);
-            border-radius: 8px;
-            padding: 13px 34px;
-            font-size: 1em;
-            cursor: pointer;
-            opacity: .5;
-            transition: all 0.4s;
-        }
-
-
-        .thankyou-container .back-btn:hover {
-            opacity: 1;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.311);
-            background-color: crimson;
-            color: white;
-        }
-
+     
 
 
         .thankyou-container .circle_container {
@@ -280,19 +257,9 @@
         <p class="desc">
             I appreciate your interest in my graphic design services and will reply soon with the next steps.
         </p>
-
-            <button type="button" class="back-btn">Go Back
-                <i class="ri-arrow-left-line"></i>
-            </button>
-        
+         
     </div>
 
-    <script>
-        document.querySelector(".back-btn").addEventListener("click", function () {
-            window.location.href = "http://127.0.0.1:5500/index.html#contact";
-        });
-
-    </script>
 </body>
 
 </html>
