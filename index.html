@@ -1,265 +1,424 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You!</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
-        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        @font-face {
-            font-family: "Montserrat Alternate";
-            src: url('.Fonts/MontserratAlternates-Regular.woff2');
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thanks for reaching out — Shuvaranjan Sarkar</title>
+<meta name="description" content="Your message has been received. Thank-you page for Shuvaranjan Sarkar's graphic design & development portfolio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --card:#141414;
+    --card-line: rgba(255,255,255,0.09);
+    --red:#e6262e;
+    --red-deep:#a8121a;
+    --white:#f5f5f2;
+    --muted:#9a9a9a;
+    --muted-dim:#6c6c6c;
+  }
 
-        @font-face {
-            font-family: "Grechen Fuemen";
-            src: url('./Fonts/GrechenFuemen-Regular.woff2');
-        }
+  *{ box-sizing:border-box; }
+  html{ -webkit-text-size-adjust:100%; }
 
-        /* root Variable CSS */
-        :root {
-            --hue: 358;
-            --first-color: hsl(var(--hue), 80%, 49%);
-            --first-color-alt: hsl(var(--hue), 76%, 45%);
-            --white-color: hsl(0, 0%, 98%);
-            --black-color: hsl(0, 0%, 1%);
-            --text-color: hsl(var(--hue), 2%, 66%);
-            --body-color: hsl(var(--hue), 100%, 1%);
-            --container-color: hsl(var(--hue), 2%, 10%);
-            --conic-gradient: conic-gradient(from 150deg at 50% 45%,
-                    hsl(var(--hue), 80%, 20%) 0deg,
-                    hsl(var(--hue), 80%, 48%) 140deg,
-                    hsl(var(--hue), 80%, 20%) 360deg);
+  body{
+    margin:0;
+    min-height:100svh;
+    background:var(--bg);
+    color:var(--white);
+    font-family:'Inter', sans-serif;
+    position:relative;
+    overflow-x:hidden;
+  }
 
-            /* Font and Typography */
-            --body-font: "Montserrat Alternate", sans-serif;
-            --second-font: "Grechen Fuemen", cursive;
-            --biggest-font-size: 2.5rem;
-            --h1-font-size: 1.5rem;
-            --h2-font-size: 1.25rem;
-            --h3-font-size: 1rem;
-            --normal-font-size: .9rem;
-            --small-font-size: .8rem;
-            --smaller-font-size: .7rem;
+  body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background-image: radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px);
+    background-size: 26px 26px;
+    pointer-events:none;
+    z-index:0;
+  }
 
-            /* Font Weight */
-            --font-regular: 400;
-            --font-medium: 500;
-            --font-semibold: 600;
+  .glow{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(20px);
+    pointer-events:none;
+    z-index:0;
+    animation: drift 11s ease-in-out infinite alternate;
+  }
+  .glow-a{
+    width:clamp(320px, 45vw, 560px);
+    height:clamp(320px, 45vw, 560px);
+    background:radial-gradient(circle, rgba(230,38,46,0.32), transparent 70%);
+    top:-220px; right:-180px;
+  }
+  .glow-b{
+    width:340px; height:340px;
+    background:radial-gradient(circle, rgba(168,18,26,0.28), transparent 70%);
+    bottom:-160px; left:-140px;
+    animation-delay:-4s;
+  }
+  @keyframes drift{
+    from{ transform:translate(0,0); }
+    to{ transform:translate(-16px, 18px); }
+  }
 
+  a{ color:inherit; text-decoration:none; }
 
+  /* ---------- Top bar ---------- */
+  .topbar{
+    position:relative; z-index:2;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:16px;
+    padding: clamp(18px,3vw,28px) clamp(20px,5vw,48px) 0;
+  }
+  .brand{
+    display:flex; align-items:center; gap:9px;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:0.02em;
+  }
+  .brand .dot{
+    width:9px; height:9px; border-radius:50%;
+    background:var(--red);
+    box-shadow:0 0 0 4px rgba(230,38,46,0.18);
+  }
+  .topbar-link{
+    font-size:13px;
+    font-weight:500;
+    color:var(--muted);
+    border:1px solid var(--card-line);
+    padding:8px 16px;
+    border-radius:999px;
+    transition: color .2s ease, border-color .2s ease, background .2s ease;
+    white-space:nowrap;
+  }
+  .topbar-link:hover{ color:var(--white); border-color:rgba(255,255,255,0.22); background:rgba(255,255,255,0.03); }
+  .topbar-link:focus-visible{ outline:2px solid var(--red); outline-offset:3px; }
 
-        }
+  /* ---------- Stage / grid ---------- */
+  .stage{
+    position:relative; z-index:2;
+    display:grid;
+    grid-template-columns: minmax(320px, 620px);
+    gap: clamp(16px,3vw,28px);
+    justify-content:center;
+    align-items:start;
+    padding: clamp(28px,6vw,56px) clamp(20px,5vw,48px) clamp(48px,8vw,80px);
+    max-width:1000px;
+    margin:0 auto;
+  }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  @media (max-width: 860px){
+    .stage{ grid-template-columns: 1fr; max-width:520px; }
+  }
 
-        .glass {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            backdrop-filter: blur(12px);
+  /* ---------- Receipt card ---------- */
+  .receipt-card{
+    position:relative;
+    background:var(--card);
+    border:1px solid var(--card-line);
+    border-radius:26px;
+    padding: clamp(28px,4vw,44px) clamp(24px,4.5vw,40px) clamp(24px,4vw,34px);
+    animation: cardIn .7s .1s cubic-bezier(.2,.8,.2,1) both;
+  }
 
-        }
+  /* registration / crop marks — a nod to print production */
+  .reg-mark{
+    position:absolute;
+    width:16px; height:16px;
+    opacity:0.35;
+    pointer-events:none;
+  }
+  .reg-mark::before, .reg-mark::after{
+    content:''; position:absolute; background:var(--muted);
+  }
+  .reg-mark::before{ width:100%; height:1px; top:50%; left:0; }
+  .reg-mark::after{ width:1px; height:100%; left:50%; top:0; }
+  .reg-mark.tl{ top:14px; left:14px; }
+  .reg-mark.tr{ top:14px; right:14px; }
+  .reg-mark.bl{ bottom:14px; left:14px; }
+  .reg-mark.br{ bottom:14px; right:14px; }
 
-        a {
-            text-decoration: none;
+  .ticket-head{
+    display:flex; align-items:center; justify-content:space-between;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--muted-dim);
+    padding-bottom:16px;
+    margin-bottom: clamp(18px,3vw,28px);
+    border-bottom:1px dashed var(--card-line);
+  }
 
+  /* ---------- Stamp ---------- */
+  .stamp-wrap{
+    display:flex; justify-content:center;
+    margin-bottom: clamp(14px,3vw,22px);
+    position:relative;
+  }
+  .stamp-halo{
+    position:absolute;
+    width:150px; height:150px;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%) scale(0.6);
+    background:radial-gradient(circle, rgba(230,38,46,0.4), transparent 70%);
+    filter:blur(6px);
+    opacity:0;
+    animation: haloBloom 1s .35s ease-out forwards;
+  }
+  .stamp{
+    width: clamp(112px, 22vw, 148px);
+    height: clamp(112px, 22vw, 148px);
+    position:relative;
+    animation: stampDown .85s .25s cubic-bezier(.22,.85,.25,1) both;
+  }
+  .stamp text{
+    font-family:'Space Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:2px;
+    fill:var(--red);
+  }
 
-        }
+  @keyframes stampDown{
+    0%{ transform:scale(2.4) rotate(-20deg); opacity:0; }
+    55%{ transform:scale(0.92) rotate(-5deg); opacity:1; }
+    78%{ transform:scale(1.06) rotate(-9deg); }
+    100%{ transform:scale(1) rotate(-7deg); opacity:1; }
+  }
+  @keyframes haloBloom{
+    0%{ opacity:0; transform:translate(-50%,-50%) scale(0.5); }
+    60%{ opacity:0.55; }
+    100%{ opacity:0.3; transform:translate(-50%,-50%) scale(1.25); }
+  }
 
-        body {
-            background-image: url('./Images/bg1.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            height: 100vh;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            font-family: var(--body-font);
-        }
+  /* ---------- Copy ---------- */
+  .eyebrow{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    font-family:'Space Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:#8fdca0;
+    margin:0 0 12px;
+  }
+  .eyebrow .dot-sm{
+    width:7px; height:7px; border-radius:50%;
+    background:#4ade80;
+    box-shadow:0 0 0 3px rgba(74,222,128,0.18);
+  }
 
-        .thankyou-container {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
+  h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size: clamp(28px, 4.6vw, 40px);
+    line-height:1.1;
+    text-align:center;
+    margin:0 0 14px;
+  }
 
-            background: rgba(255, 255, 255, 0.062);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border-radius: 18px;
-            box-shadow: 0 0 35px rgb(0, 0, 0);
-            border: 1px solid rgba(255, 255, 255, 0.345);
-            padding: 3.5rem 1.5rem;
-            max-width: 500px;
-            height: auto;
-            /* text-align: center; */
-            transition: all 0.5s ease;
-            animation: fadeIn 0.5s ease;
-        }
+  .body-copy{
+    font-size: clamp(14.5px, 1.6vw, 16px);
+    line-height:1.65;
+    color:var(--muted);
+    text-align:center;
+    max-width:44ch;
+    margin:0 auto clamp(18px,3vw,26px);
+  }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0);
-            }
+  .postmark{
+    text-align:center;
+    font-family:'Space Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--muted-dim);
+    margin:0 0 clamp(24px,4vw,32px);
+  }
 
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
+  .cta-row{
+    display:flex; justify-content:center; flex-wrap:wrap;
+    gap:12px;
+    margin-bottom: clamp(26px,4vw,34px);
+  }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+    font-size:14.5px;
+    padding:13px 26px;
+    border-radius:999px;
+    transition: transform .18s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .btn-primary{
+    background:var(--red);
+    color:#fff;
+    box-shadow:0 10px 24px rgba(230,38,46,0.32);
+  }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 14px 30px rgba(230,38,46,0.42); }
+  .btn-ghost{
+    background:transparent;
+    color:var(--white);
+    border:1px solid var(--card-line);
+  }
+  .btn-ghost:hover{ border-color:rgba(255,255,255,0.28); background:rgba(255,255,255,0.03); transform:translateY(-2px); }
+  .btn:focus-visible{ outline:2px solid var(--red); outline-offset:3px; }
 
-        .thankyou-container h1 {
-            position: relative;
-            color: transparent;
-            background-clip: text;
-            /* margin-bottom: 2.5rem; */
-            -webkit-background-clip: text;
-            -webkit-text-stroke: .1px crimson;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            font-weight: 800;
-            font-family: var(--second-font);
-            font-size: 5rem;
-            text-align: center;
-            transition: all 0.5s ease;
-            animation: textFadeIn 1.2s ease-in-out;
-        }
+  @media (max-width:480px){
+    .btn{ flex:1 1 100%; }
+  }
 
-        @keyframes textFadeIn {
-            from {
-                opacity: 0;
-                transform: translateX(-500%);
-            }
+  /* ---------- Tear line (notched, like a ticket stub) ---------- */
+  .tear-line{
+    position:relative;
+    border-top:2px dashed var(--card-line);
+    margin: 0 calc(-1 * clamp(24px,4.5vw,40px)) clamp(20px,3vw,26px);
+  }
+  .tear-line::before, .tear-line::after{
+    content:'';
+    position:absolute; top:-11px;
+    width:22px; height:22px;
+    border-radius:50%;
+    background:var(--bg);
+  }
+  .tear-line::before{ left:-11px; }
+  .tear-line::after{ right:-11px; }
 
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
+  .footer-row{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:14px; flex-wrap:wrap;
+  }
+  .signature{
+    font-family:'Caveat', cursive;
+    font-size:26px;
+    color:var(--red);
+    margin:0;
+  }
+  .socials{ display:flex; gap:10px; }
+  .social{
+    width:36px; height:36px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--red);
+    color:#fff;
+    font-family:'Space Grotesk', sans-serif;
+    font-size:11.5px;
+    font-weight:700;
+    transition: transform .18s ease, background .2s ease;
+  }
+  .social:hover{ transform:translateY(-2px); background:var(--red-deep); }
+  .social:focus-visible{ outline:2px solid var(--red); outline-offset:3px; }
 
-        .thankyou-container h1::before {
-            content: 'Thank You!';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            color: rgba(255, 255, 255, 0);
-            filter: blur(8px);
-            text-shadow: 0 0 8px crimson;
-            z-index: -1;
-        }
+  @media (max-width:400px){
+    .footer-row{ justify-content:center; text-align:center; }
+  }
 
+  .page-footer{
+    position:relative; z-index:2;
+    text-align:center;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    color:var(--muted-dim);
+    padding-bottom:28px;
+  }
 
-        .thankyou-container p {
-            font-family: var(--body-font);
-            color: rgb(255, 255, 255);
-            margin: 1em 0;
-            text-align: center;
-            font-size: var(--small-font-size);
-        }
+  @keyframes cardIn{
+    from{ opacity:0; transform:translateY(18px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
 
-     
-
-
-        .thankyou-container .circle_container {
-            position: absolute;
-            top: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 75px;
-            height: 75px;
-            background-color: crimson;
-            box-shadow: inset 0 0 10px;
-            border-radius: 100%;
-            padding: .5rem;
-            overflow: hidden;
-        }
-
-        .circle_container>.circle_icon {
-            width: 100%;
-            height: 100%;
-            border-radius: inherit;
-            box-shadow: 0 0 5px white;
-        }
-
-        .highlight {
-            color: white;
-            font-size: var(--font-regular);
-            font-weight: 800;
-            /* line-height: 50px; */
-        }
-
-        /* Media Query */
-        @media (max-width: 756px) {
-            .thankyou-container {
-                /* padding: 24px; */
-                width: 400px;
-            }
-
-            .thankyou-container h1 {
-                font-size: 3rem;
-            }
-        }
-
-        @media (min-width: 320px) and (max-width: 400px) {
-            .thankyou-container {
-                /* padding: 2rem .5rem; */
-                width: 320px;
-            }
-
-            .thankyou-container h1 {
-                font-size: 3rem;
-                margin-top: 2rem;
-            }
-
-            .thankyou-container p {
-                line-height: 30px;
-                font-family: var(--body-font);
-                color: var(--white-color);
-                font-weight: 100;
-                /* margin-bottom: 1em; */
-                font-size: var(--font-medium);
-            }
-
-            .highlight {
-                font-weight: 800;
-                font-size: var(--small-font-size);
-                line-height: 50px;
-            }
-
-        }
-    </style>
+  @media (prefers-reduced-motion: reduce){
+    .glow, .receipt-card, .stamp, .stamp-halo{
+      animation:none !important;
+      opacity:1 !important;
+      transform:none !important;
+    }
+  }
+</style>
 </head>
-
 <body>
-    <div class="glass"></div>
-    <div class="thankyou-container">
-        <div class="circle_container">
-            <img src="./Images/sent.gif" alt="gif" class="circle_icon">
+
+  <div class="glow glow-a"></div>
+  <div class="glow glow-b"></div>
+
+  <header class="topbar">
+    <div class="brand"><span class="dot"></span>Shuvaranjan</div>
+    <a class="topbar-link" href="index.html">Back to Portfolio →</a>
+  </header>
+
+  <main class="stage">
+
+    <section class="receipt-card">
+      <span class="reg-mark tl" aria-hidden="true"></span>
+      <span class="reg-mark tr" aria-hidden="true"></span>
+      <span class="reg-mark bl" aria-hidden="true"></span>
+      <span class="reg-mark br" aria-hidden="true"></span>
+
+      <div class="ticket-head">
+        <span>Delivery Receipt</span>
+        <span id="ticketNo">No. —</span>
+      </div>
+
+      <div class="stamp-wrap">
+        <div class="stamp-halo" aria-hidden="true"></div>
+        <svg class="stamp" viewBox="0 0 200 200" role="img" aria-label="Message received stamp">
+          <circle cx="100" cy="100" r="94" fill="none" stroke="var(--red)" stroke-width="1.5" opacity="0.5"/>
+          <circle cx="100" cy="100" r="86" fill="none" stroke="var(--red)" stroke-width="1.5" stroke-dasharray="2 5" opacity="0.7"/>
+          <path id="circlePath" fill="none"
+            d="M 100,100 m -72,0 a 72,72 0 1,1 144,0 a 72,72 0 1,1 -144,0" />
+          <text>
+            <textPath href="#circlePath" startOffset="2%">MESSAGE RECEIVED • MESSAGE RECEIVED •</textPath>
+          </text>
+          <circle cx="100" cy="100" r="42" fill="var(--red)"/>
+          <path d="M77,101 L93,117 L126,79" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <p class="eyebrow"><span class="dot-sm"></span>Delivered to inbox</p>
+      <h1>Thanks for saying hello.</h1>
+      <p class="body-copy">
+        Your message just landed with me. I read every one myself and usually reply within 24–48 hours.
+        While you wait, feel free to look through more of the design and development work.
+      </p>
+      <p class="postmark">Sent · <span id="today"></span> · Durgapur, IN</p>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://shuvaranjan.github.io/GRAPHIC-DESIGN-PORTFOLIO/">Back to Portfolio</a>
+      </div>
+
+      <div class="tear-line" aria-hidden="true"></div>
+
+      <div class="footer-row">
+        <p class="signature">— Shuvaranjan</p>
+        <div class="socials">
+          <a class="social" href="#" aria-label="LinkedIn">in</a>
+          <a class="social" href="#" aria-label="Behance">Be</a>
+          <a class="social" href="#" aria-label="Instagram">Ig</a>
         </div>
-        <h1>Thank You!</h1>
-        <span class="highlight">For reaching out!</span>
-        <p class="desc">
-            I appreciate your interest in my graphic design services and will reply soon with the next steps.
-        </p>
-         
-    </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="page-footer">Crafted with care in Durgapur</footer>
+
+  <script>
+    var d = new Date();
+    var months = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+    var stamp = months[d.getMonth()] + " " + String(d.getDate()).padStart(2,"0") + ", " + d.getFullYear();
+    document.getElementById("today").textContent = stamp;
+
+    var ticket = d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + String(d.getDate()).padStart(2,"0");
+    document.getElementById("ticketNo").textContent = "No. " + ticket;
+  </script>
 
 </body>
-
 </html>
